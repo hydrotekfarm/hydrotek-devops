@@ -1,0 +1,152 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.33">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>Branch</name>
+          <description>Target branch for build</description>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>Tag</name>
+          <description>Tag for docker image</description>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CI</name>
+          <description>CI project name</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>4</visibleItemCount>
+          <type>PT_RADIO</type>
+          <value>apiserver-app,fertigation_system,climate_controller,mqtt_client</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>apiserver</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CD</name>
+          <description>CD project name</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>4</visibleItemCount>
+          <type>PT_RADIO</type>
+          <value>apiserver,fertigation_system,climate_controller,mqtt_client</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>apiserver</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>BRANCH=$Branch
+IMAGE_TAG=$Tag
+SELECTED_APP_CI=$CI
+SELECTED_APP_CD=$CD
+
+CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+CI_WORK_DIR=~/hydrotek/cicdbuild/
+
+DEPLOYMENT=hydrotekapp-deployment
+NAMESPACE=dev
+NETWORKTYPE=LoadBalancer
+PORTNUM=4400
+
+GCLOUD_PATH=/Users/ajay/Downloads/google-cloud-sdk/bin
+DOCKER_PATH=/usr/local/bin
+KUBE_PATH=/usr/local/bin
+
+
+continous_integration_server() {
+	echo &quot;Begining Integration of ${SELECTED_APP_CI}&quot;
+    
+    mkdir -p $CI_WORK_DIR
+    cd $CI_WORK_DIR
+    
+    # Check if repos is already cloned
+    if [ -d &quot;$SELECTED_APP_CI&quot; ]; then
+    
+      cd $SELECTED_APP_CI
+      git pull 
+    
+    else
+    
+      git clone -b $BRANCH git@gitlab.com:iot15/${SELECTED_APP_CI}.git
+      cd $SELECTED_APP_CI
+    
+    fi
+    
+    # Build and Push image to GCR
+    ${GCLOUD_PATH}/gcloud auth print-access-token |${DOCKER_PATH}/docker login -u oauth2accesstoken --password-stdin https://gcr.io
+    
+    ${DOCKER_PATH}/docker build -t ${CONTAINER_REGISTRY}/hydroapiserver:${IMAGE_TAG} .
+    ${DOCKER_PATH}/docker push ${CONTAINER_REGISTRY}/hydroapiserver:${IMAGE_TAG}
+}
+
+continous_deployment_server() {
+	echo &quot;Begining Deployment of ${CD}&quot;
+    
+    # Set correct gcloud configuration
+	${GCLOUD_PATH}/gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+    
+    
+    # Check if deployment is already created
+    if ${KUBE_PATH}/kubectl get deployments $DEPLOYMENT --namespace $NAMESPACE | grep -q $DEPLOYMENT; then
+    
+    	echo &quot;Updating the deployment with latest version&quot;
+        
+        SELECTED_IMAGE=${CONTAINER_REGISTRY}/hydroapiserver:${IMAGE_TAG}
+        
+        ${KUBE_PATH}/kubectl set image deployment/$DEPLOYMENT hydroapiserver=$SELECTED_IMAGE --namespace $NAMESPACE
+        ${KUBE_PATH}/kubectl rollout restart deployment $DEPLOYMENT --namespace $NAMESPACE
+        
+        echo &quot;Updated Deployment&quot;
+    
+    else 
+    
+    	echo &quot;New deployemnt&quot;
+        
+        kubectl create deployment $DEPLOYMENT --image=${CONTAINER_REGISTRY}/hydroapiserver:${IMAGETAG} --namespace $NAMESPACE
+        kubectl expose deployment $DEPLOYMENT --type=$NETWORKTYPE --port $PORTNUM --namespace $NAMESPACE
+        
+	    sleep 15
+    
+    fi
+}
+
+echo &quot;CI/CD Pipeline Started&quot;
+
+if [ -z &quot;$SELECTED_APP_CI&quot; ]
+then
+      echo &quot;No project was selected for integration&quot;
+else
+      continous_integration_server
+fi
+
+if [ -z &quot;$SELECTED_APP_CD&quot; ]
+then
+      echo &quot;No project was selected for deployment&quot;
+else
+      continous_deployment_server
+fi</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
