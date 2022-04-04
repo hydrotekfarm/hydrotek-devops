@@ -1,0 +1,23 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4K4GRAHFxM9EP6BYXwX5hFwF69JF9dBm8FTqX2vnEcE6AAAAqB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgYZ/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfUNDSwB9PTdf0QAAAA==[0m119
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins476159929737092887.sh
++ BRANCH=master
++ IMAGE_TAG=v1.20
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=/c/Users/ajayv/hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=4400
++ GCLOUD_PATH=/Users/ajay/Downloads/google-cloud-sdk/bin
++ DOCKER_PATH=/usr/local/bin
++ KUBE_PATH=/usr/local/bin
++ EMBEDDED_DEVOPS_HOME=/c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded
++ echo 'hello worlkd'
+hello worlkd
++ echo 'hello worlkd1'
+hello worlkd1
+C:\Users\ajayv\AppData\Local\Temp\jenkins476159929737092887.sh: line 164: syntax error: unexpected end of file
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

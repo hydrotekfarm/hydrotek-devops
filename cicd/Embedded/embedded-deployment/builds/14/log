@@ -1,0 +1,38 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4Mvql9cst+7veCTA+apM1Kxu52tOcyrSr5FpcRMG+PLFAAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZp/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfUNjAIh/P9nQAAAA[0m13
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins7794750975250562819.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>C:\Ajay\run.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set BRANCH=master 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set IMAGE_TAG=v1.0 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment 
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>CD C:\Ajay\cicdbuild 
+
+C:\Ajay\cicdbuild>echo C:\Ajay\cicdbuild 
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>if exist esp32_automation\ (
+CD esp32_automation  
+ git pull 
+)  else (
+git clone -b master https://gitlab.com/iot15/esp32_automation.git  
+ CD esp32_automation 
+) 
+Cloning into 'esp32_automation'...
+Logon failed, use ctrl+c to cancel basic credential prompt.
+bash: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://gitlab.com': No such file or directory
+The system cannot find the path specified.
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

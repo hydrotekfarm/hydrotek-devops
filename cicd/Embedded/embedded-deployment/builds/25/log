@@ -1,0 +1,62 @@
+Started by user [8mha:////4F4WA11wyv+XVNpe/rQhizQKzV1cSkd2EMPG2iY3Oy62AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xKzEyjIAWGl+UsAAAAA=[0mAjay Vairavan
+Rebuilds build #[8mha:////4GSE3p4RA9ybmvbo/+fGpC3gV4stqcR6N1s5KfLx7aX1AAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZp/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfSMTAOi5dmzQAAAA[0m24
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins2131734542934381504.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>C:\Ajay\run.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set BRANCH=master 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set IMAGE_TAG=v1.0 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\WINDOWS\system32\config\systemprofile 
+C:\WINDOWS\system32\config\systemprofile
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo LAPTOP-AGN30S2I$ 
+LAPTOP-AGN30S2I$
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment 
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>CD C:\Ajay\cicdbuild 
+
+C:\Ajay\cicdbuild>echo C:\Ajay\cicdbuild 
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>if exist esp32_automation\ (
+CD esp32_automation  
+ git pull 
+)  else (
+git clone -b master git@gitlab.com:iot15/esp32_automation.git  
+ CD esp32_automation 
+) 
+Cloning into 'esp32_automation'...
+
+C:\Ajay\cicdbuild\esp32_automation>echo C:\Ajay\cicdbuild\esp32_automation 
+C:\Ajay\cicdbuild\esp32_automation
+
+C:\Ajay\cicdbuild\esp32_automation>echo C:\WINDOWS\system32\config\systemprofile 
+C:\WINDOWS\system32\config\systemprofile
+
+C:\Ajay\cicdbuild\esp32_automation>CD  
+C:\Ajay\cicdbuild\esp32_automation
+
+C:\Ajay\cicdbuild\esp32_automation>export .bat 
+'export' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Ajay\cicdbuild\esp32_automation>CD C:\Ajay\cicdbuild\esp32_automation 
+
+C:\Ajay\cicdbuild\esp32_automation>idf.py build 
+'idf.py' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Ajay\cicdbuild\esp32_automation>gsutil cp ./build/app-template.bin gs://ota-images-testing-12-11-21/fertigation/ 
+'gsutil' is not recognized as an internal or external command,
+operable program or batch file.
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

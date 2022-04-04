@@ -1,0 +1,130 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+        <entry>
+          <com.sonyericsson.rebuild.RebuildCause plugin="rebuild@1.33">
+            <upstreamProject>embedded-deployment</upstreamProject>
+            <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+            <upstreamBuild>97</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UserIdCause>
+                <userId>admin</userId>
+              </hudson.model.Cause_-UserIdCause>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>embedded-deployment</upstreamProject>
+                <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                <upstreamBuild>96</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UserIdCause>
+                    <userId>admin</userId>
+                  </hudson.model.Cause_-UserIdCause>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>embedded-deployment</upstreamProject>
+                    <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                    <upstreamBuild>95</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UserIdCause>
+                        <userId>admin</userId>
+                      </hudson.model.Cause_-UserIdCause>
+                      <hudson.model.Cause_-UpstreamCause>
+                        <upstreamProject>embedded-deployment</upstreamProject>
+                        <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                        <upstreamBuild>94</upstreamBuild>
+                        <upstreamCauses>
+                          <hudson.model.Cause_-UserIdCause>
+                            <userId>admin</userId>
+                          </hudson.model.Cause_-UserIdCause>
+                          <hudson.model.Cause_-UpstreamCause>
+                            <upstreamProject>embedded-deployment</upstreamProject>
+                            <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                            <upstreamBuild>93</upstreamBuild>
+                            <upstreamCauses>
+                              <hudson.model.Cause_-UserIdCause>
+                                <userId>admin</userId>
+                              </hudson.model.Cause_-UserIdCause>
+                              <hudson.model.Cause_-UpstreamCause>
+                                <upstreamProject>embedded-deployment</upstreamProject>
+                                <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                                <upstreamBuild>92</upstreamBuild>
+                                <upstreamCauses>
+                                  <hudson.model.Cause_-UserIdCause>
+                                    <userId>admin</userId>
+                                  </hudson.model.Cause_-UserIdCause>
+                                  <hudson.model.Cause_-UpstreamCause>
+                                    <upstreamProject>embedded-deployment</upstreamProject>
+                                    <upstreamUrl>job/embedded-deployment/</upstreamUrl>
+                                    <upstreamBuild>91</upstreamBuild>
+                                    <upstreamCauses>
+                                      <hudson.model.Cause_-UserIdCause>
+                                        <userId>admin</userId>
+                                      </hudson.model.Cause_-UserIdCause>
+                                    </upstreamCauses>
+                                  </hudson.model.Cause_-UpstreamCause>
+                                </upstreamCauses>
+                              </hudson.model.Cause_-UpstreamCause>
+                            </upstreamCauses>
+                          </hudson.model.Cause_-UpstreamCause>
+                        </upstreamCauses>
+                      </hudson.model.Cause_-UpstreamCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </com.sonyericsson.rebuild.RebuildCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>Branch</name>
+          <value>master</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>Tag</name>
+          <value>v1.0.0</value>
+        </hudson.model.StringParameterValue>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterValue plugin="extended-choice-parameter@0.82">
+          <name>CI</name>
+          <value>fertigationsystem</value>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterValue>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterValue plugin="extended-choice-parameter@0.82">
+          <name>CD</name>
+          <value>fertigationsystem</value>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>Branch</string>
+        <string>Tag</string>
+        <string>CI</string>
+        <string>CD</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.33"/>
+  </actions>
+  <queueId>65</queueId>
+  <timestamp>1647707881611</timestamp>
+  <startTime>1647707881623</startTime>
+  <result>SUCCESS</result>
+  <duration>20000</duration>
+  <charset>windows-1252</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment</workspace>
+  <hudsonVersion>2.303.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

@@ -1,0 +1,223 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.33">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>Branch</name>
+          <defaultValue>master</defaultValue>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>Tag</name>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CI</name>
+          <description>CI project name</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>4</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <value>apiserver,fertigationsystem,climatecontroller,mqttclient</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>embedded-deployment</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.82">
+          <name>CD</name>
+          <description>CD project name</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>4</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <value>apiserver,fertigationsystem,climatecontroller,mqttclient</value>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>embedded-deployment</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>BRANCH=$Branch
+IMAGE_TAG=$Tag
+CONTAINER_REGISTRY=gcr.io/hydrotek-286213
+CI_WORK_DIR=~/hydrotek/cicdbuild/
+NAMESPACE=dev
+NETWORKTYPE=LoadBalancer
+PORTNUM=4400
+GCLOUD_PATH=/Users/ajay/Downloads/google-cloud-sdk/bin
+DOCKER_PATH=/usr/local/bin
+KUBE_PATH=/usr/local/bin
+EMBEDDED_DEVOPS_HOME=/c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded
+
+
+set_app_variables() {
+	case &quot;$1&quot; in
+     &quot;apiserver&quot;)
+     PROJECT_NAME=&quot;apiserver&quot;
+     IMAGE_NAME=&quot;hydroapiserver&quot;
+     REPOS_NAME=&quot;apiserver-app&quot;
+     DEPLOYMENT=&quot;hydrotekapp-deployment&quot;
+     ;;
+     &quot;mqttclient&quot;)
+     PROJECT_NAME=&quot;mqttclient&quot;
+     IMAGE_NAME=&quot;hydromqttclient&quot;
+     REPOS_NAME=&quot;raspberry-auto&quot;
+     DEPLOYMENT=&quot;hydromqttdeployment&quot;
+     ;;
+     &quot;fertigationsystem&quot;)
+     PROJECT_NAME=&quot;fertigation-system&quot;
+     IMAGE_NAME=&quot;&quot;
+     REPOS_NAME=&quot;esp32_automation&quot;
+     CLOUD_BUCKET_URL=&quot;ota-images-testing-12-11-21/fertigation/${IMAGE_TAG}/app-template.bin&quot;
+     ;;
+     &quot;climatecontroller&quot;)
+     PROJECT_NAME=&quot;climate-controller&quot;
+     IMAGE_NAME=&quot;&quot;
+     REPOS_NAME=&quot;climate-controller-bot&quot;
+     CLOUD_BUCKET_URL=&quot;ota-images-testing-12-11-21/climate/${IMAGE_TAG}/app-template.bin&quot;
+     ;;
+	esac
+}
+
+echo &quot;hello worlkd&quot;
+
+continous_integration_embedded() {
+	echo &quot;Begining Integration of ${PROJECT_NAME}&quot;
+    
+    cd /c/Users/ajayv/desktop/esp-idf
+    
+    /c/Users/ajayv/.espressif/python_env/idf4.0_py3.9_env/Scripts/python.exe -m pip install -r /c/Users/ajayv/desktop/esp-idf/requirements.txt
+        
+    source export.sh
+    
+    cd /c/Users/ajayv
+        # Check if repos is already cloned
+        if [ -d &quot;$REPOS_NAME&quot; ]; then
+          cd $REPOS_NAME
+          git pull
+        else
+          git clone -b $BRANCH git@gitlab.com:iot15/${REPOS_NAME}.git
+          cd $REPOS_NAME
+        fi
+    echo ${IMAGE_TAG} | tee ./version.txt
+        
+    idf.py build
+    
+    git add ./version.txt
+    
+    git commit -m &quot;New release created&quot;
+    
+	git tag -a ${IMAGE_TAG} -m &quot;New Tag: ${IMAGE_TAG}&quot;
+    
+    git push origin ${IMAGE_TAG}
+    
+	gsutil.cmd cp ./build/app-template.bin gs://${CLOUD_BUCKET_URL}
+    
+    gsutil.cmd acl ch -u AllUsers:R gs://${CLOUD_BUCKET_URL}
+}
+
+echo &quot;hello worlkd1&quot;
+
+continous_deployment_embedded() {
+	pip install -r ${EMBEDDED_DEVOPS_HOME}/requirements.txt
+    
+	python ${EMBEDDED_DEVOPS_HOME}/UpdateFirestore.py $PROJECT_NAME $IMAGE_TAG https://storage.googleapis.com/${CLOUD_BUCKET_URL} ${EMBEDDED_DEVOPS_HOME}/serviceAccountKey.json
+    python ${EMBEDDED_DEVOPS_HOME}/mqtt.py https://storage.googleapis.com/${CLOUD_BUCKET_URL}
+}
+
+echo &quot;hello worlkd2&quot;
+
+continous_integration_server() {
+	echo &quot;Begining Integration of ${PROJECT_NAME}&quot;
+    mkdir -p $CI_WORK_DIR
+    cd $CI_WORK_DIR
+    # Check if repos is already cloned
+    if [ -d &quot;$REPOS_NAME&quot; ]; then
+      cd $REPOS_NAME
+      git pull
+    else
+      git clone -b $BRANCH git@gitlab.com:iot15/${REPOS_NAME}.git
+      cd $REPOS_NAME
+    fi
+    # Build and Push image to GCR
+    ${GCLOUD_PATH}/gcloud auth print-access-token |${DOCKER_PATH}/docker login -u oauth2accesstoken --password-stdin https://gcr.io
+    ${DOCKER_PATH}/docker build -t ${CONTAINER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} .
+    ${DOCKER_PATH}/docker push ${CONTAINER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
+}
+
+echo &quot;hello worlkd3&quot;
+
+continous_deployment_server() {
+	echo &quot;Begining Deployment of ${PROJECT_NAME}&quot;
+    # Set correct gcloud configuration
+	${GCLOUD_PATH}/gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project hydrotek-286213
+    # Check if deployment is already created
+    if ${KUBE_PATH}/kubectl get deployments $DEPLOYMENT --namespace $NAMESPACE | grep -q $DEPLOYMENT; then
+    	echo &quot;Updating the deployment with latest version&quot;
+        SELECTED_IMAGE=${CONTAINER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
+        ${KUBE_PATH}/kubectl set image deployment/$DEPLOYMENT ${IMAGE_NAME}=$SELECTED_IMAGE --namespace $NAMESPACE
+        ${KUBE_PATH}/kubectl rollout restart deployment $DEPLOYMENT --namespace $NAMESPACE
+        echo &quot;Updated Deployment&quot;
+    else
+    	echo &quot;New deployemnt&quot;
+        ${KUBE_PATH}/kubectl create deployment $DEPLOYMENT --image=${CONTAINER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} --namespace $NAMESPACE
+        ${KUBE_PATH}/kubectl expose deployment $DEPLOYMENT --type=$NETWORKTYPE --port $PORTNUM --namespace $NAMESPACE
+	    sleep 15
+    fi
+}
+
+echo &quot;hello worlkd4&quot;
+echo &quot;CI/CD Pipeline Started&quot;
+if [ -z &quot;$CI&quot; ]
+then
+      echo &quot;No project was selected for integration&quot;
+else
+	  for i in &quot;${CI[@]}&quot;
+      do
+         set_app_variables &quot;$CI&quot;
+         if [ $CI == &quot;apiserver&quot;  ] || [ $CI == &quot;mqttclient&quot;  ]
+         then
+         	continous_integration_server
+         else
+         	continous_integration_embedded
+         fi
+         
+      done
+fi
+if [ -z &quot;$CD&quot; ]
+then
+      echo &quot;No project was selected for deployment&quot;
+else
+	  for i in &quot;${CD[@]}&quot;
+      do
+         set_app_variables &quot;$CD&quot;
+         if [ $CI == &quot;apiserver&quot;  ] || [ $CI == &quot;mqttclient&quot;  ]
+         then
+         	continous_deployment_server
+         else
+         	continous_deployment_embedded
+         fi
+      done
+fi</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

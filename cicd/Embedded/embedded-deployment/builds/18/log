@@ -1,0 +1,59 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4H+bMMjQkhpMuEMjulPSDym/QYn159hH329ro2mlSlUHAAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZp/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfUNzAJG7Ut7QAAAA[0m17
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins1227200660918662906.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>C:\Ajay\run.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set BRANCH=master 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set IMAGE_TAG=v1.0 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment 
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>CD C:\Ajay\cicdbuild 
+
+C:\Ajay\cicdbuild>echo C:\Ajay\cicdbuild 
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>if exist esp32_automation\ (
+CD esp32_automation  
+ git pull 
+)  else (
+git clone -b master https://gitlab.com/iot15/esp32_automation.git  
+ CD esp32_automation 
+) 
+Cloning into 'esp32_automation'...
+The system cannot find the path specified.
+Terminate batch job (Y/N)? 
+
+C:\Ajay\cicdbuild>echo C:\Ajay\cicdbuild 
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>CD  
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>export .bat 
+'export' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Ajay\cicdbuild>CD C:\Ajay\cicdbuild\esp32_automation 
+The system cannot find the path specified.
+
+C:\Ajay\cicdbuild>idf.py build 
+'idf.py' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Ajay\cicdbuild>gsutil cp ./build/app-template.bin gs://ota-images-testing-12-11-21/fertigation/ 
+'gsutil' is not recognized as an internal or external command,
+operable program or batch file.
+fatal: Unable to read prompt input from standard input [0xe9]
+fatal: No process is on the other end of the pipe
+Build was aborted
+Aborted by [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Finished: ABORTED

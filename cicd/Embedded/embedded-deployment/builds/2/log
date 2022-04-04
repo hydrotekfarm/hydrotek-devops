@@ -1,0 +1,30 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4FgeQw+3jq/vgZacbZ25ouDNRsVKwcCYwcyMfuwY1yqoAAAApR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBin9rPwk/dTcpNSUlNQU3ZTUgpz8ytzUvBJ9QwClGmLMzwAAAA==[0m1
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins680278111046285546.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>#!/bin/bash
+'#!' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>BRANCH=master 
+'BRANCH' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>IMAGE_TAG=v1.0 
+'IMAGE_TAG' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>mkdir -p /hydrotek/cicdbuild 
+The syntax of the command is incorrect.
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>cd /hydrotek/cicdbuild 
+The system cannot find the path specified.
+The syntax of the command is incorrect.
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>if exist /hydrotek/cicdbuild/esp32_automation 
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

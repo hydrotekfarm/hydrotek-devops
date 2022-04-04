@@ -1,0 +1,15 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4AW0GY90Z7htKz73KzQ1iWqN2xlACLjaQscdnQTq1O+LAAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZp/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfVMjABqKVMrQAAAA[0m52
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins3391950095366918067.sh
++ echo /c/Users/ajayv
+/c/Users/ajayv
++ REPOS_NAME=esp32_automation
++ cd /c/Users/ajayv
++ '[' -d esp32_automation ']'
++ cd esp32_automation
++ git pull
+C:\Users\ajayv\AppData\Local\Temp\jenkins3391950095366918067.sh: line 13: git: command not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

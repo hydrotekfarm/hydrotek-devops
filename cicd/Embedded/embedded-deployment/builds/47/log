@@ -1,0 +1,46 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins6097147562042531079.sh
++ REPOS_NAME=esp32_automation
++ cd /c/Users/ajayv/desktop/esp-idf
++ source export.sh
+++ idf_export_main
+++ '[' -n export.sh ']'
+++ '[' export.sh = 'C:\Users\ajayv\AppData\Local\Temp\jenkins6097147562042531079.sh' ']'
+++ '[' -z 'C:\Users\ajayv\Desktop\esp-idf' ']'
+++ '[' '!' -d 'C:\Users\ajayv\Desktop\esp-idf' ']'
+++ '[' '!' -f 'C:\Users\ajayv\Desktop\esp-idf/tools/idf.py' ']'
+++ '[' '!' -f 'C:\Users\ajayv\Desktop\esp-idf/tools/idf_tools.py' ']'
+++ export 'IDF_PATH=C:\Users\ajayv\Desktop\esp-idf'
+++ IDF_PATH='C:\Users\ajayv\Desktop\esp-idf'
+++ old_path='/c/Users/ajayv/AppData/Local/Programs/Python/Python39:%SystemRoot%/system32:%SystemRoot%:%SystemRoot%/System32/Wbem:%SYSTEMROOT%/System32/WindowsPowerShell/v1.0:%SYSTEMROOT%/System32/OpenSSH:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
+++ echo 'Adding ESP-IDF tools to PATH...'
+Adding ESP-IDF tools to PATH...
+++ export 'IDF_TOOLS_EXPORT_CMD=C:\Users\ajayv\Desktop\esp-idf/export.sh'
+++ IDF_TOOLS_EXPORT_CMD='C:\Users\ajayv\Desktop\esp-idf/export.sh'
+++ export 'IDF_TOOLS_INSTALL_CMD=C:\Users\ajayv\Desktop\esp-idf/install.sh'
+++ IDF_TOOLS_INSTALL_CMD='C:\Users\ajayv\Desktop\esp-idf/install.sh'
++++ 'C:\Users\ajayv\Desktop\esp-idf/tools/idf_tools.py' export
+Traceback (most recent call last):
+  File "C:\Users\ajayv\Desktop\esp-idf\tools\idf_tools.py", line 1387, in <module>
+    main(sys.argv[1:])
+  File "C:\Users\ajayv\Desktop\esp-idf\tools\idf_tools.py", line 1383, in main
+    action_func(args)
+  File "C:\Users\ajayv\Desktop\esp-idf\tools\idf_tools.py", line 1008, in action_export
+    idf_python_env_path, idf_python_export_path, virtualenv_python = get_python_env_path()
+  File "C:\Users\ajayv\Desktop\esp-idf\tools\idf_tools.py", line 846, in get_python_env_path
+    idf_version_str = subprocess.check_output(['git', 'describe'],
+  File "C:\Users\ajayv\AppData\Local\Programs\Python\Python39\lib\subprocess.py", line 420, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "C:\Users\ajayv\AppData\Local\Programs\Python\Python39\lib\subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "C:\Users\ajayv\AppData\Local\Programs\Python\Python39\lib\subprocess.py", line 947, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\ajayv\AppData\Local\Programs\Python\Python39\lib\subprocess.py", line 1416, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+++ idf_exports=
+++ return 1
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

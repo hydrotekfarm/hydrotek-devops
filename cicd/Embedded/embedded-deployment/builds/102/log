@@ -1,0 +1,329 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4OspIGvn7JrH53Oh/dDOYR/yoHSBCoj7n/WLa4T7+bD8AAAAqB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgYZ/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfUMDQwAOhPdI0QAAAA==[0m101
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins4771288012583833510.sh
++ BRANCH=master
++ IMAGE_TAG=5.5.6
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=/c/Users/ajayv/hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=4400
++ GCLOUD_PATH=/Users/ajay/Downloads/google-cloud-sdk/bin
++ DOCKER_PATH=/usr/local/bin
++ KUBE_PATH=/usr/local/bin
++ EMBEDDED_DEVOPS_HOME=/c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z climatecontroller ']'
++ for i in "${CI[@]}"
++ set_app_variables climatecontroller
++ case "$1" in
++ PROJECT_NAME=climate-controller
++ IMAGE_NAME=
++ REPOS_NAME=climate-controller-bot
++ CLOUD_BUCKET_URL=ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
++ '[' climatecontroller == apiserver ']'
++ '[' climatecontroller == mqttclient ']'
++ continous_integration_embedded
++ echo 'Begining Integration of climate-controller'
+Begining Integration of climate-controller
++ cd /c/Users/ajayv/desktop/esp-idf
++ source export.sh
+++ idf_export_main
+++ '[' -n export.sh ']'
+++ '[' export.sh = 'C:\Users\ajayv\AppData\Local\Temp\jenkins4771288012583833510.sh' ']'
+++ '[' -z 'C:\Users\ajayv\Desktop\esp-idf' ']'
+++ '[' '!' -d 'C:\Users\ajayv\Desktop\esp-idf' ']'
+++ '[' '!' -f 'C:\Users\ajayv\Desktop\esp-idf/tools/idf.py' ']'
+++ '[' '!' -f 'C:\Users\ajayv\Desktop\esp-idf/tools/idf_tools.py' ']'
+++ export 'IDF_PATH=C:\Users\ajayv\Desktop\esp-idf'
+++ IDF_PATH='C:\Users\ajayv\Desktop\esp-idf'
+++ old_path='/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
+++ echo 'Adding ESP-IDF tools to PATH...'
+Adding ESP-IDF tools to PATH...
+++ export 'IDF_TOOLS_EXPORT_CMD=C:\Users\ajayv\Desktop\esp-idf/export.sh'
+++ IDF_TOOLS_EXPORT_CMD='C:\Users\ajayv\Desktop\esp-idf/export.sh'
+++ export 'IDF_TOOLS_INSTALL_CMD=C:\Users\ajayv\Desktop\esp-idf/install.sh'
+++ IDF_TOOLS_INSTALL_CMD='C:\Users\ajayv\Desktop\esp-idf/install.sh'
++++ 'C:\Users\ajayv\Desktop\esp-idf/tools/idf_tools.py' export
+++ idf_exports='export OPENOCD_SCRIPTS="C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\share\openocd\scripts";export IDF_CCACHE_ENABLE="1";export IDF_PYTHON_ENV_PATH="C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env";export PATH="C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:$PATH"'
+++ eval 'export OPENOCD_SCRIPTS="C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\share\openocd\scripts";export IDF_CCACHE_ENABLE="1";export IDF_PYTHON_ENV_PATH="C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env";export PATH="C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:$PATH"'
++++ export 'OPENOCD_SCRIPTS=C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\share\openocd\scripts'
++++ OPENOCD_SCRIPTS='C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\share\openocd\scripts'
++++ export IDF_CCACHE_ENABLE=1
++++ IDF_CCACHE_ENABLE=1
++++ export 'IDF_PYTHON_ENV_PATH=C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env'
++++ IDF_PYTHON_ENV_PATH='C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env'
++++ export 'PATH=C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
++++ PATH='C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
+++ echo 'Checking if Python packages are up to date...'
+Checking if Python packages are up to date...
+++ echo 'C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program' Files '(x86)/Google/Cloud' 'SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft' VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps
+C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps
+++ python --version
+Python 3.9.1
+++ python 'C:\Users\ajayv\Desktop\esp-idf/tools/check_python_dependencies.py'
+Python requirements from C:\Users\ajayv\Desktop\esp-idf\requirements.txt are satisfied.
+++ IDF_ADD_PATHS_EXTRAS='C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool'
+++ IDF_ADD_PATHS_EXTRAS='C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool:C:\Users\ajayv\Desktop\esp-idf/components/espcoredump'
+++ IDF_ADD_PATHS_EXTRAS='C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool:C:\Users\ajayv\Desktop\esp-idf/components/espcoredump:C:\Users\ajayv\Desktop\esp-idf/components/partition_table/'
+++ export 'PATH=C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool:C:\Users\ajayv\Desktop\esp-idf/components/espcoredump:C:\Users\ajayv\Desktop\esp-idf/components/partition_table/:C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
+++ PATH='C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool:C:\Users\ajayv\Desktop\esp-idf/components/espcoredump:C:\Users\ajayv\Desktop\esp-idf/components/partition_table/:C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python39:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/bin:/cmd:/c/Program Files (x86)/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/ajayv/AppData/Local/Programs/Python/Python37/Scripts:/c/Users/ajayv/Desktop/esp-idf/tools":/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps:/c/Users/ajayv/AppData/Local/Yarn/bin:/c/Users/ajayv/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/ajayv/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin:/c/Users/ajayv/AppData/Roaming/npm:/c/Users/ajayv/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/Scripts:/c/Users/ajayv/AppData/Local/GitHubDesktop/bin:/c/Program Files/Docker/Docker/resources/bin:/c/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin:/c/intelFPGA/18.1/modelsim_ase/win32aloem:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/.dotnet/tools:/c/Users/ajayv/AppData/Local/Microsoft/WindowsApps'
+++ '[' -n /usr/bin/bash ']'
+++ path_prefix='C:\Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool:C:\Users\ajayv\Desktop\esp-idf/components/espcoredump:C:\Users\ajayv\Desktop\esp-idf/components/partition_table/:C:\Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin:C:\Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin:C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin:C:\Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin:C:\Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\:C:\Users\ajayv\.espressif\tools\ninja\1.9.0\:C:\Users\ajayv\.espressif\tools\idf-exe\1.0.1\:C:\Users\ajayv\.espressif\tools\ccache\3.7\:C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts:'
+++ paths='C \Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool C \Users\ajayv\Desktop\esp-idf/components/espcoredump C \Users\ajayv\Desktop\esp-idf/components/partition_table/ C \Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin C \Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin C \Users\ajayv\.espressif\tools\cmake\3.13.4\bin C \Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin C \Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\ C \Users\ajayv\.espressif\tools\ninja\1.9.0\ C \Users\ajayv\.espressif\tools\idf-exe\1.0.1\ C \Users\ajayv\.espressif\tools\ccache\3.7\ C \Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts '
+++ '[' -n 'C \Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool C \Users\ajayv\Desktop\esp-idf/components/espcoredump C \Users\ajayv\Desktop\esp-idf/components/partition_table/ C \Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin C \Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin C \Users\ajayv\.espressif\tools\cmake\3.13.4\bin C \Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin C \Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\ C \Users\ajayv\.espressif\tools\ninja\1.9.0\ C \Users\ajayv\.espressif\tools\idf-exe\1.0.1\ C \Users\ajayv\.espressif\tools\ccache\3.7\ C \Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts ' ']'
+++ echo 'Added the following directories to PATH:'
+Added the following directories to PATH:
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool'
+  \Users\ajayv\Desktop\esp-idf/components/esptool_py/esptool
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\Desktop\esp-idf/components/espcoredump'
+  \Users\ajayv\Desktop\esp-idf/components/espcoredump
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\Desktop\esp-idf/components/partition_table/'
+  \Users\ajayv\Desktop\esp-idf/components/partition_table/
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin'
+  \Users\ajayv\.espressif\tools\xtensa-esp32-elf\esp-2020r3-8.4.0\xtensa-esp32-elf\bin
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin'
+  \Users\ajayv\.espressif\tools\esp32ulp-elf\2.28.51.20170517\esp32ulp-elf-binutils\bin
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\cmake\3.13.4\bin'
+  \Users\ajayv\.espressif\tools\cmake\3.13.4\bin
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin'
+  \Users\ajayv\.espressif\tools\openocd-esp32\v0.10.0-esp32-20200709\openocd-esp32\bin
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\'
+  \Users\ajayv\.espressif\tools\mconf\v4.6.0.0-idf-20190628\
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\ninja\1.9.0\'
+  \Users\ajayv\.espressif\tools\ninja\1.9.0\
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\idf-exe\1.0.1\'
+  \Users\ajayv\.espressif\tools\idf-exe\1.0.1\
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\tools\ccache\3.7\'
+  \Users\ajayv\.espressif\tools\ccache\3.7\
+++ for path_entry in ${paths}
+++ echo '  C'
+  C
+++ for path_entry in ${paths}
+++ echo '  \Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts'
+  \Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts
+++ unset old_path
+++ unset paths
+++ unset path_prefix
+++ unset path_entry
+++ unset IDF_ADD_PATHS_EXTRAS
+++ unset idf_exports
+++ echo 'Done! You can now compile ESP-IDF projects.'
+Done! You can now compile ESP-IDF projects.
+++ echo 'Go to the project directory and run:'
+Go to the project directory and run:
+++ echo ''
+
+++ echo '  idf.py build'
+  idf.py build
+++ echo ''
+
+++ unset realpath_int
+++ unset idf_export_main
++ cd /c/Users/ajayv
++ '[' -d climate-controller-bot ']'
++ cd climate-controller-bot
++ git pull
+Already up to date.
++ echo 5.5.6
++ tee ./version.txt
+5.5.6
++ idf.py build
+Python requirements from C:\Users\ajayv\Desktop\esp-idf\requirements.txt are satisfied.
+[0/1] Re-running CMake...
+-- mconf-idf version mconf-v4.6.0.0-idf-20190628-win32
+-- ccache will be used for faster recompilation
+-- Project version: 5.5.6
+-- Building ESP-IDF components for target esp32
+-- Adding linker script C:/Users/ajayv/climate-controller-bot/build/esp-idf/esp32/esp32_out.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp32/ld/esp32.project.ld.in
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp32/ld/esp32.peripherals.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script C:/Users/ajayv/Desktop/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Components: app_trace app_update asio boot bootloader bootloader_support bt coap console cxx driver efuse esp-tls esp32 esp_adc_cal esp_common esp_eth esp_event esp_gdbstub esp_http_client esp_http_server esp_https_ota esp_https_server esp_local_ctrl esp_ringbuf esp_rom esp_websocket_client esp_wifi espcoredump esptool_py expat fatfs freemodbus freertos grow_manager heap idf_test jsmn json libsodium log lwip main mbedtls mdns mqtt network_manager newlib nghttp nvs_flash nvs_manager openssl partition_table protobuf-c protocomm pthread rf_transmitter rtc sdmmc sensors soc spi_flash spiffs tcp_transport tcpip_adapter ulp unity vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: C:/Users/ajayv/Desktop/esp-idf/components/app_trace C:/Users/ajayv/Desktop/esp-idf/components/app_update C:/Users/ajayv/Desktop/esp-idf/components/asio C:/Users/ajayv/climate-controller-bot/components/boot C:/Users/ajayv/Desktop/esp-idf/components/bootloader C:/Users/ajayv/Desktop/esp-idf/components/bootloader_support C:/Users/ajayv/Desktop/esp-idf/components/bt C:/Users/ajayv/Desktop/esp-idf/components/coap C:/Users/ajayv/Desktop/esp-idf/components/console C:/Users/ajayv/Desktop/esp-idf/components/cxx C:/Users/ajayv/Desktop/esp-idf/components/driver C:/Users/ajayv/Desktop/esp-idf/components/efuse C:/Users/ajayv/Desktop/esp-idf/components/esp-tls C:/Users/ajayv/Desktop/esp-idf/components/esp32 C:/Users/ajayv/Desktop/esp-idf/components/esp_adc_cal C:/Users/ajayv/Desktop/esp-idf/components/esp_common C:/Users/ajayv/Desktop/esp-idf/components/esp_eth C:/Users/ajayv/Desktop/esp-idf/components/esp_event C:/Users/ajayv/Desktop/esp-idf/components/esp_gdbstub C:/Users/ajayv/Desktop/esp-idf/components/esp_http_client C:/Users/ajayv/Desktop/esp-idf/components/esp_http_server C:/Users/ajayv/Desktop/esp-idf/components/esp_https_ota C:/Users/ajayv/Desktop/esp-idf/components/esp_https_server C:/Users/ajayv/Desktop/esp-idf/components/esp_local_ctrl C:/Users/ajayv/Desktop/esp-idf/components/esp_ringbuf C:/Users/ajayv/Desktop/esp-idf/components/esp_rom C:/Users/ajayv/Desktop/esp-idf/components/esp_websocket_client C:/Users/ajayv/Desktop/esp-idf/components/esp_wifi C:/Users/ajayv/Desktop/esp-idf/components/espcoredump C:/Users/ajayv/Desktop/esp-idf/components/esptool_py C:/Users/ajayv/Desktop/esp-idf/components/expat C:/Users/ajayv/Desktop/esp-idf/components/fatfs C:/Users/ajayv/Desktop/esp-idf/components/freemodbus C:/Users/ajayv/Desktop/esp-idf/components/freertos C:/Users/ajayv/climate-controller-bot/components/grow_manager C:/Users/ajayv/Desktop/esp-idf/components/heap C:/Users/ajayv/Desktop/esp-idf/components/idf_test C:/Users/ajayv/Desktop/esp-idf/components/jsmn C:/Users/ajayv/Desktop/esp-idf/components/json C:/Users/ajayv/Desktop/esp-idf/components/libsodium C:/Users/ajayv/Desktop/esp-idf/components/log C:/Users/ajayv/Desktop/esp-idf/components/lwip C:/Users/ajayv/climate-controller-bot/main C:/Users/ajayv/Desktop/esp-idf/components/mbedtls C:/Users/ajayv/Desktop/esp-idf/components/mdns C:/Users/ajayv/Desktop/esp-idf/components/mqtt C:/Users/ajayv/climate-controller-bot/components/network_manager C:/Users/ajayv/Desktop/esp-idf/components/newlib C:/Users/ajayv/Desktop/esp-idf/components/nghttp C:/Users/ajayv/Desktop/esp-idf/components/nvs_flash C:/Users/ajayv/climate-controller-bot/components/nvs_manager C:/Users/ajayv/Desktop/esp-idf/components/openssl C:/Users/ajayv/Desktop/esp-idf/components/partition_table C:/Users/ajayv/Desktop/esp-idf/components/protobuf-c C:/Users/ajayv/Desktop/esp-idf/components/protocomm C:/Users/ajayv/Desktop/esp-idf/components/pthread C:/Users/ajayv/climate-controller-bot/components/rf_transmitter C:/Users/ajayv/climate-controller-bot/components/rtc C:/Users/ajayv/Desktop/esp-idf/components/sdmmc C:/Users/ajayv/climate-controller-bot/components/sensors C:/Users/ajayv/Desktop/esp-idf/components/soc C:/Users/ajayv/Desktop/esp-idf/components/spi_flash C:/Users/ajayv/Desktop/esp-idf/components/spiffs C:/Users/ajayv/Desktop/esp-idf/components/tcp_transport C:/Users/ajayv/Desktop/esp-idf/components/tcpip_adapter C:/Users/ajayv/Desktop/esp-idf/components/ulp C:/Users/ajayv/Desktop/esp-idf/components/unity C:/Users/ajayv/Desktop/esp-idf/components/vfs C:/Users/ajayv/Desktop/esp-idf/components/wear_levelling C:/Users/ajayv/Desktop/esp-idf/components/wifi_provisioning C:/Users/ajayv/Desktop/esp-idf/components/wpa_supplicant C:/Users/ajayv/Desktop/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ajayv/climate-controller-bot/build
+[1/9] cmd.exe /C "cd /D C:\Users\ajayv\climate-controller-bot\build\esp-idf\partition_table && C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin\cmake.exe -E echo "Partition table binary generated. Contents:" && C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin\cmake.exe -E echo ******************************************************************************* && C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts\python.exe C:/Users/ajayv/Desktop/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 2MB C:/Users/ajayv/climate-controller-bot/build/partition_table/partition-table.bin && C:\Users\ajayv\.espressif\tools\cmake\3.13.4\bin\cmake.exe -E echo *******************************************************************************"
+Partition table binary generated. Contents:
+*******************************************************************************
+# Espressif ESP32 Partition Table
+# Name, Type, SubType, Offset, Size, Flags
+nvs,data,nvs,0x9000,24K,
+phy_init,data,phy,0xf000,4K,
+factory,app,factory,0x10000,1M,
+coredump,data,coredump,0x110000,64K,
+*******************************************************************************
+[2/9] Performing build step for 'bootloader'
+ninja: no work to do.
+[3/7] Building C object esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj
+[4/7] Linking CXX static library esp-idf\app_update\libapp_update.a
+[5/7] Generating ld/esp32.project.ld
+[6/7] Linking CXX executable app-template.elf
+[7/7] Generating binary image from built executable
+esptool.py v2.8
+Generated C:/Users/ajayv/climate-controller-bot/build/app-template.bin
+Checking Python dependencies...
+Executing action: all (aliases: build)
+Running ninja in directory c:\users\ajayv\climate-controller-bot\build
+Executing "ninja all"...
+
+Project build complete. To flash, run this command:
+C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts\python.exe ..\Desktop\esp-idf\components\esptool_py\esptool\esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0x10000 build\app-template.bin
+or run 'idf.py -p (PORT) flash'
++ git add ./version.txt
+warning: LF will be replaced by CRLF in version.txt.
+The file will have its original line endings in your working directory
++ git commit -m 'New release created'
+[main 78e9de6] New release created
+ 1 file changed, 1 insertion(+), 1 deletion(-)
++ git tag -a 5.5.6 -m 'New Tag: 5.5.6'
++ git push origin 5.5.6
+To gitlab.com:iot15/climate-controller-bot.git
+ * [new tag]         5.5.6 -> 5.5.6
++ gsutil.cmd cp ./build/app-template.bin gs://ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
+Copying file://.\build\app-template.bin [Content-Type=application/octet-stream]...
+/ [0 files][    0.0 B/918.3 KiB]                                                / [1 files][918.3 KiB/918.3 KiB]                                                -
+Operation completed over 1 objects/918.3 KiB.                                    
++ gsutil.cmd acl ch -u AllUsers:R gs://ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
+Updated ACL on gs://ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
++ '[' -z climatecontroller ']'
++ for i in "${CD[@]}"
++ set_app_variables climatecontroller
++ case "$1" in
++ PROJECT_NAME=climate-controller
++ IMAGE_NAME=
++ REPOS_NAME=climate-controller-bot
++ CLOUD_BUCKET_URL=ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
++ '[' climatecontroller == apiserver ']'
++ '[' climatecontroller == mqttclient ']'
++ continous_deployment_embedded
++ pip install -r /c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded/requirements.txt
+Collecting firebase_admin==5.2.0
+  Using cached firebase_admin-5.2.0-py3-none-any.whl (115 kB)
+Collecting cachecontrol>=0.12.6
+  Using cached CacheControl-0.12.10-py2.py3-none-any.whl (20 kB)
+Collecting google-api-core[grpc]<3.0.0dev,>=1.22.1
+  Using cached google_api_core-2.7.1-py3-none-any.whl (114 kB)
+Collecting google-api-python-client>=1.7.8
+  Using cached google_api_python_client-2.42.0-py2.py3-none-any.whl (8.3 MB)
+Collecting google-auth<3.0dev,>=1.25.0
+  Using cached google_auth-2.6.2-py2.py3-none-any.whl (156 kB)
+Collecting cachetools<6.0,>=2.0.0
+  Using cached cachetools-5.0.0-py3-none-any.whl (9.1 kB)
+Collecting google-auth-httplib2>=0.1.0
+  Using cached google_auth_httplib2-0.1.0-py2.py3-none-any.whl (9.3 kB)
+Collecting google-cloud-firestore>=2.1.0
+  Using cached google_cloud_firestore-2.4.0-py2.py3-none-any.whl (243 kB)
+Collecting google-cloud-core<3.0.0dev,>=1.4.1
+  Using cached google_cloud_core-2.2.3-py2.py3-none-any.whl (29 kB)
+Collecting google-cloud-storage>=1.37.1
+  Using cached google_cloud_storage-2.2.1-py2.py3-none-any.whl (107 kB)
+Collecting google-resumable-media>=2.3.2
+  Using cached google_resumable_media-2.3.2-py2.py3-none-any.whl (76 kB)
+Collecting google-crc32c<2.0dev,>=1.0
+  Using cached google_crc32c-1.3.0-cp39-cp39-win_amd64.whl (27 kB)
+Collecting googleapis-common-protos<2.0dev,>=1.52.0
+  Using cached googleapis_common_protos-1.56.0-py2.py3-none-any.whl (241 kB)
+Collecting grpcio<2.0dev,>=1.33.2
+  Using cached grpcio-1.44.0-cp39-cp39-win_amd64.whl (3.4 MB)
+Collecting grpcio-status<2.0dev,>=1.33.2
+  Using cached grpcio_status-1.44.0-py3-none-any.whl (10.0 kB)
+Collecting httplib2<1dev,>=0.15.0
+  Using cached httplib2-0.20.4-py3-none-any.whl (96 kB)
+Collecting msgpack>=0.5.2
+  Using cached msgpack-1.0.3-cp39-cp39-win_amd64.whl (69 kB)
+Collecting proto-plus>=1.10.0
+  Using cached proto_plus-1.20.3-py3-none-any.whl (46 kB)
+Collecting protobuf>=3.12.0
+  Using cached protobuf-3.19.4-cp39-cp39-win_amd64.whl (895 kB)
+Collecting pyasn1-modules>=0.2.1
+  Using cached pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Collecting pyasn1<0.5.0,>=0.4.6
+  Using cached pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+  Using cached pyparsing-3.0.7-py3-none-any.whl (98 kB)
+Collecting requests
+  Using cached requests-2.27.1-py2.py3-none-any.whl (63 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+Collecting charset-normalizer~=2.0.0
+  Using cached charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.3-py3-none-any.whl (61 kB)
+Collecting rsa<5,>=3.1.4
+  Using cached rsa-4.8-py3-none-any.whl (39 kB)
+Collecting six>=1.9.0
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting uritemplate<5,>=3.0.1
+  Using cached uritemplate-4.1.1-py2.py3-none-any.whl (10 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Using cached urllib3-1.26.9-py2.py3-none-any.whl (138 kB)
+Installing collected packages: pyasn1, urllib3, six, rsa, pyasn1-modules, protobuf, idna, charset-normalizer, certifi, cachetools, requests, pyparsing, grpcio, googleapis-common-protos, google-auth, httplib2, grpcio-status, google-crc32c, google-api-core, uritemplate, proto-plus, msgpack, google-resumable-media, google-cloud-core, google-auth-httplib2, google-cloud-storage, google-cloud-firestore, google-api-python-client, cachecontrol, firebase-admin
+  Attempting uninstall: pyparsing
+    Found existing installation: pyparsing 2.3.1
+    Uninstalling pyparsing-2.3.1:
+      Successfully uninstalled pyparsing-2.3.1
+Successfully installed cachecontrol-0.12.10 cachetools-5.0.0 certifi-2021.10.8 charset-normalizer-2.0.12 firebase-admin-5.2.0 google-api-core-2.7.1 google-api-python-client-2.42.0 google-auth-2.6.2 google-auth-httplib2-0.1.0 google-cloud-core-2.2.3 google-cloud-firestore-2.4.0 google-cloud-storage-2.2.1 google-crc32c-1.3.0 google-resumable-media-2.3.2 googleapis-common-protos-1.56.0 grpcio-1.44.0 grpcio-status-1.44.0 httplib2-0.20.4 idna-3.3 msgpack-1.0.3 proto-plus-1.20.3 protobuf-3.19.4 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-3.0.7 requests-2.27.1 rsa-4.8 six-1.16.0 uritemplate-4.1.1 urllib3-1.26.9
+WARNING: You are using pip version 20.3.3; however, version 22.0.4 is available.
+You should consider upgrading via the 'C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\Scripts\python.exe -m pip install --upgrade pip' command.
++ python /c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded/UpdateFirestore.py climate-controller 5.5.6 https://storage.googleapis.com/ota-images-testing-12-11-21/climate/5.5.6/app-template.bin
+Traceback (most recent call last):
+  File "C:\Users\ajayv\Desktop\hydrotek-devops\cicd\Embedded\UpdateFirestore.py", line 4, in <module>
+    cred = credentials.Certificate("serviceAccountKey.json")
+  File "C:\Users\ajayv\.espressif\python_env\idf4.0_py3.9_env\lib\site-packages\firebase_admin\credentials.py", line 83, in __init__
+    with open(cert) as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'serviceAccountKey.json'
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

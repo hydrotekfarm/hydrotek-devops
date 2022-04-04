@@ -1,0 +1,22 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4Ij54ydXkPeAZLfFhv9riQvdUeEym8TBrJeH/Lxc5+BkAAAApR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBin9rPwk/dTcpNSUlNQU3ZTUgpz8ytzUvBJ9YwCJe2wizwAAAA==[0m3
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins1538687360340327651.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>C:\Ajay\run.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set BRANCH=master 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set IMAGE_TAG=v1.0 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>mkdir -p C:\Ajay\cicdbuild 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>cd C:\Ajay\cicdbuild 
+The syntax of the command is incorrect.
+C:\Ajay\cicdbuild>if exist C:\Ajay\cicdbuild\esp32_automation 
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE

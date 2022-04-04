@@ -1,0 +1,53 @@
+Started by user [8mha:////4F4WA11wyv+XVNpe/rQhizQKzV1cSkd2EMPG2iY3Oy62AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xKzEyjIAWGl+UsAAAAA=[0mAjay Vairavan
+Rebuilds build #[8mha:////4NBTo7k6JjzEowSD18olY/wBs5EfXRMAnauvKYz582Z8AAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZp/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfSNLAFXFxxLQAAAA[0m29
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ cmd /c call C:\WINDOWS\TEMP\jenkins7050870668596312556.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>C:\Ajay\run.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set BRANCH=master 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>set IMAGE_TAG=v1.0 
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\MATLAB\R2021a\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ajayv\AppData\Local\Programs\Python\Python39\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps 
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\MATLAB\R2021a\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\ajayv\AppData\Local\Programs\Python\Python39\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo "Beginning integration of ESP32 Automation" 
+"Beginning integration of ESP32 Automation"
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>echo C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment 
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+
+C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment>CD C:\Ajay\cicdbuild 
+
+C:\Ajay\cicdbuild>echo C:\Ajay\cicdbuild 
+C:\Ajay\cicdbuild
+
+C:\Ajay\cicdbuild>if exist esp32_automation\ (
+CD esp32_automation  
+ git pull 
+)  else (
+git clone -b master git@gitlab.com:iot15/esp32_automation.git  
+ CD esp32_automation 
+) 
+Already up to date.
+
+C:\Ajay\cicdbuild\esp32_automation>echo C:\Ajay\cicdbuild\esp32_automation 
+C:\Ajay\cicdbuild\esp32_automation
+
+C:\Ajay\cicdbuild\esp32_automation>echo C:\WINDOWS\system32\config\systemprofile 
+C:\WINDOWS\system32\config\systemprofile
+
+C:\Ajay\cicdbuild\esp32_automation>CD C:\Users\ajayv\Desktop\esp-idf 
+
+C:\Users\ajayv\Desktop\esp-idf>export.bat
+Setting IDF_PATH: C:\Users\ajayv\Desktop\esp-idf
+
+Adding ESP-IDF tools to PATH...
+Not using an unsupported version of tool cmake found in PATH: 3.18.1.
+WARNING: tool openocd-esp32 version v0.10.0-esp32-20200709 is installed, but the tool failed to run
+ERROR: tool openocd-esp32 has no installed versions. Please run 'C:\Users\ajayv\Desktop\esp-idf\install.bat' to install it.
+WARNING: tool mconf version v4.6.0.0-idf-20190628 is installed, but the tool failed to run
+ERROR: tool mconf has no installed versions. Please run 'C:\Users\ajayv\Desktop\esp-idf\install.bat' to install it.
+Finished: SUCCESS

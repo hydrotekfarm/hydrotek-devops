@@ -1,0 +1,38 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Rebuilds build #[8mha:////4FIIEhxd/yYUrNRGw4IlcAQ1ognxSAOtsuVWLWq3SGnAAAAAqB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgYZ/az8JP3U3KTUlJTUFN2U1IKc/Mrc1LwSfUMDUwAXQJpP0QAAAA==[0m105
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins8643862160419175341.sh
++ BRANCH=master
++ IMAGE_TAG=5.5.8
++ CONTAINER_REGISTRY=gcr.io/hydrotek-286213
++ CI_WORK_DIR=/c/Users/ajayv/hydrotek/cicdbuild/
++ NAMESPACE=dev
++ NETWORKTYPE=LoadBalancer
++ PORTNUM=4400
++ GCLOUD_PATH=/Users/ajay/Downloads/google-cloud-sdk/bin
++ DOCKER_PATH=/usr/local/bin
++ KUBE_PATH=/usr/local/bin
++ EMBEDDED_DEVOPS_HOME=/c/Users/ajayv/Desktop/hydrotek-devops/cicd/Embedded
++ echo 'CI/CD Pipeline Started'
+CI/CD Pipeline Started
++ '[' -z climatecontroller ']'
++ for i in "${CI[@]}"
++ set_app_variables climatecontroller
++ case "$1" in
++ PROJECT_NAME=climate-controller
++ IMAGE_NAME=
++ REPOS_NAME=climate-controller-bot
++ CLOUD_BUCKET_URL=ota-images-testing-12-11-21/climate/5.5.8/app-template.bin
++ '[' climatecontroller == apiserver ']'
++ '[' climatecontroller == mqttclient ']'
++ continous_integration_embedded
++ echo 'Begining Integration of climate-controller'
+Begining Integration of climate-controller
++ cd /c/Users/ajayv/desktop/esp-idf
++ pip install -r /c/Users/ajayv/desktop/esp-idfrequirements.txt
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'C:/Users/ajayv/desktop/esp-idfrequirements.txt'
+WARNING: You are using pip version 20.2.3; however, version 22.0.4 is available.
+You should consider upgrading via the 'c:\users\ajayv\appdata\local\programs\python\python39\python.exe -m pip install --upgrade pip' command.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,12 @@
+Started by user [8mha:////4IuQMs35E2tPHNrqvTWTnKSYc/Yzo4msDwaF5M297GxZAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\embedded-deployment
+[embedded-deployment] $ "C:\Program Files\Git\usr\bin\bash.exe" -xe C:\Users\ajayv\AppData\Local\Temp\jenkins5467376297369483363.sh
++ echo /c/Users/ajayv
+/c/Users/ajayv
++ REPOS_NAME=esp32_automation
++ cd /c/Users/ajayv/desktop/esp-idf
++ export .bat
+C:\Users\ajayv\AppData\Local\Temp\jenkins5467376297369483363.sh: line 7: export: `.bat': not a valid identifier
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
